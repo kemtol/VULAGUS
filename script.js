@@ -62,11 +62,11 @@ $(document).ready(async function () {
   // ===============================
   // Tombol browse sugaluv
   // ===============================
-  $("#browse-more-sugalove").click(function (e) {
+$("a#browse-more-sugalove").click(function (e) {
     e.preventDefault();
     $("#landing-screen").addClass("d-none");
     $("#matching-screen").removeClass("d-none");
-  });
+});
 
 
   // ===============================
