@@ -58,6 +58,16 @@ $(document).ready(async function () {
     }
   }
 
+
+  // ===============================
+  // Tombol browse sugaluv
+  // ===============================
+  $("#browse-more-sugalove").click(function () {
+    $("#landing-screen").addClass("d-none");
+    $("#matching-screen").removeClass("d-none");
+  });
+
+
   // ===============================
   // Tombol kembali dari Chat ke swipe
   // ===============================
