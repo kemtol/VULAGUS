@@ -1,0 +1,212 @@
+/* === GLOBAL STYLES === */
+.container {
+  max-width: 768px; /* Set max-width to 768px */
+}
+
+button {
+  width: 200px;
+  transition: background-color 0.3s ease-in-out;
+}
+
+button:hover {
+  background-color: #710d0d;
+}
+
+.img-thumbnail {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 10px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.img-thumbnail:hover {
+  transform: scale(1.1);
+}
+
+/* === CARD CONTAINER === */
+.card-container {
+  position: relative;
+  width: 100%;
+  height: 500px;
+  margin: 0;
+  margin: auto;
+}
+
+/* === CARD STYLES === */
+.card {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background-size: cover;
+  background-position: center;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  padding: 20px;
+  color: white;
+  font-size: 1.2em;
+  transition: transform 0.3s ease-out;
+}
+
+/* === LANDING SCREEN === */
+#landing-screen h1,
+#landing-screen h4 {
+  color: #dc3545;
+}
+
+#landing-screen h1 {
+  font-weight: bold;
+}
+
+#landing-screen p.lead {
+  font-size: 1.12rem;
+  font-weight: 300;
+}
+
+/* === MATCHING SCREEN === */
+#matching-screen {
+  padding: 0;
+  margin: 0;
+  border-radius: 0;
+}
+
+#matching-screen .card-container {
+  position: relative;
+}
+
+#matching-screen .card {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  border-radius: 0;
+  border: 2px solid white;
+  box-shadow: none;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  text-align: center;
+  transition: transform 0.5s ease-out, opacity 0.5s ease-out;
+}
+
+#matching-screen .card-bg-blur {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  filter: blur(5px);
+  transform: scale(1);
+  z-index: 0;
+  opacity: 0.5;
+}
+
+/* === REGISTER SCREEN === */
+#register-screen h1 {
+  text-align: center;
+  font-weight: 700;
+  margin-bottom: 30px;
+  color: #dc3545;
+}
+
+#register-screen form .form-control {
+  border-radius: 10px;
+  padding: 10px 15px;
+  font-size: 1rem;
+}
+
+/* === CARD INFO === */
+#matching-screen .card-info {
+  text-align: left;
+  color: black;
+  width: calc(100% - 1rem);
+  margin: 0.5rem;
+  padding: 15px;
+  border-radius: 15px 15px 0 0;
+  position: absolute;
+  left: 0;
+  bottom: -25%;
+}
+
+#matching-screen .card-info small {
+  display: block;
+  text-align: center;
+  font-size: 0.65em;
+  padding: 0.5em;
+  color: #777;
+}
+
+/* === CHAT SCREEN === */
+#matching-screen #chat-screen {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: bisque;
+}
+
+#matching-screen #chat-screen #chat-messages {
+  height: 75%;
+  overflow-y: auto;
+  flex-direction: column-reverse;
+}
+
+#matching-screen #chat-screen #send-message {
+  width: 25%;
+}
+
+#matching-screen #chat-screen #back-to-swipe {
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  border: 1px solid white;
+  border-radius: 50%;
+  font-size: 14px;
+  background: white;
+  right: 15px;
+  top: 15px;
+}
+
+#matching-screen #chat-screen #back-to-swipe span {
+  position: absolute;
+  top: 0;
+  left: 8px;
+}
+
+/* === HEART ANIMATION === */
+#matching-screen .floating-heart {
+  font-size: 180px;
+  color: red;
+  animation: floatHeart 1s ease-out forwards;
+  z-index: 999;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+@keyframes floatHeart {
+  0% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-50%, -150%) scale(1.5);
+    opacity: 0;
+  }
+}
+
+/* === OVERLAY CONTENT BOX === */
+.content-overlay {
+  background-color: rgba(0, 0, 0, 0.6);
+  border-radius: 15px;
+  padding: 40px;
+  width: 80%;
+  max-width: 700px;
+}

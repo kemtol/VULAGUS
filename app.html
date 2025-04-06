@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SUGALUV</title>
+    <!-- ✅ Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <!-- ✅ jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- ✅ Hammer.js (untuk swipe) -->
+    <script src="https://hammerjs.github.io/dist/hammer.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="style.css"/>
+  </head>
+  <body
+    class="bg-light d-flex justify-content-center align-items-center vh-100"
+  >
+    <!-- landing screen -->
+    <section
+      id="landing-screen"
+      class="screen container text-center d-flex flex-column align-items-center vh-100"
+    >
+      <div class="mt-4 pb-4 pt-4 border-bottom">
+        <h2>Welcome to</h2>
+        <h1>$SUGALUV</h1>
+        <p class="lead text-muted mb-4">
+          #1 Blockchain dApp For $SUGALUV One <br />
+          Meet Dream Stable DIDY!
+        </p>
+        <button id="go-to-register" class="btn btn-danger btn-md mb-4">
+          GET INVITED
+        </button>
+        <br/>
+        <small>we select based on taste and character, its very private and selective.</small>
+      </div>
+      <!-- Member List -->
+      <div class="container pt-4 pb-4 border-bottom">
+        <h4 class="text-center mb-4">Find your $SUGALUV</h4>
+        <div class="row">
+          <div class="col-12 d-flex flex-wrap justify-content-center gap-1">
+            <a href="#">
+              <img
+                src="https://image.sgrbk.com/assets/img/front/thumb/A72234A29125FC91EB90027E806B2BD0VF.jpg"
+                alt="Sugar Baby"
+              />
+            </a>
+            <a href="#">
+              <img
+                src="https://image.sgrbk.com/assets/img/front/thumb/9AC49C2044DAAE18DB4E38F28EFE3415.jpg"
+                alt="Sugar Baby"
+              />
+            </a>
+            <a href="#">
+              <img
+                src="https://image.sgrbk.com/assets/img/front/thumb/ADFD773F2FF687BC9E4AF89FFSAE8E67BBA99C3.jpg"
+                alt="Sugar Baby"
+              />
+            </a>
+            <a href="#">
+              <img
+                src="https://image.sgrbk.com/assets/img/front/thumb/787e1adsfdasfa7fack837f9ane7.jpg"
+                alt="Sugar Baby"
+              />
+            </a>
+          </div>
+        </div>
+        <div class="text-center mt-3">
+          <a href="https://sugarbook.com/sugar-babies" class="text-danger"
+            >Browse More $SUGALUV &gt;</a
+          >
+        </div>
+      </div>
+      <!-- Sugar Daddy Perks -->
+      <div class="container pt-4 pb-4 border-bottom">
+        <h4 class="text-center mb-4">Didy On $SUGALUV Perks</h4>
+        <div class="row">
+          <div class="col-md-6">
+            <h5>💖 Ideal Relationships</h5>
+            <p>
+              Build and grow modern relationships with your own terms and
+              conditions.
+            </p>
+          </div>
+          <div class="col-md-6">
+            <h5>🔥 Fulfill Your Fantasies</h5>
+            <p>Mingle and network to your advantage.</p>
+          </div>
+        </div>
+        <div class="row mt-3">
+          <div class="col-md-6">
+            <h5>🚫 No Strings Attached</h5>
+            <p>No dramas, no restrictions, and no commitments.</p>
+          </div>
+          <div class="col-md-6">
+            <h5>🕵️‍♂️ Discreet Identity</h5>
+            <p>Remain anonymous as you wish.</p>
+          </div>
+        </div>
+      </div>
+      <!-- spplash screen -->
+      <div
+        id="preview-screen"
+        class="container pt-4 pb-4 border-bottom text-center"
+      >
+        <img
+          class="w-100"
+          src="https://image.sgrbk.com/assets/img/front/home/app-landing-my-v1.png"
+        />
+      </div>
+    </section>
+    <!-- register screen -->
+    <section id="register-screen" class="screen container d-none">
+      <div class="w-100">
+        <h1 class="mb-4">We Use Solana Wallets as Identity</h1>
+        <p class="lead mb-4 text-center">
+          Connect your wallet to start matching!
+        </p>
+        <!-- Dynamic Wallet Buttons -->
+        <div
+          id="wallet-buttons"
+          class="d-flex flex-wrap justify-content-center mb-3"
+        ></div>
+        <!-- Step Info: Install Wallet Guide -->
+        <div id="install-wallet-guide" class="d-none text-center">
+          <h5 class="text-danger alert alert-warning fs-6">
+            🔒 Wallet Not Detected
+          </h5>
+          <p class="m-3 p-3">
+            To continue, Phantom wallet depending on your browser or device:
+          </p>
+          <div class="d-grid gap-2 mb-3">
+            <a
+              href="https://chromewebstore.google.com/detail/phantom/bfnaelmomeimhlpmgjnjophhpkkoljpa"
+              target="_blank"
+              class="btn btn-dark"
+              >🔗 Chrome</a
+            >
+            <a
+              href="https://addons.mozilla.org/en-US/firefox/addon/phantom-app/"
+              target="_blank"
+              class="btn btn-warning"
+              >🦊 Firefox</a
+            >
+            <a
+              href="https://apps.apple.com/app/phantom-solana-wallet/id1598432977"
+              target="_blank"
+              class="btn btn-primary"
+              >📱 iPhone / iPad</a
+            >
+            <a
+              href="https://play.google.com/store/apps/details?id=app.phantom"
+              target="_blank"
+              class="btn btn-success"
+              >📱 Android</a
+            >
+          </div>
+          <div class="text-center">
+            <p class="m-3 p-3">Already installed your wallet?</p>
+            <button
+              class="btn btn-outline-primary btn-md mb-3"
+              id="retry-connect"
+            >
+              Refresh
+            </button>
+          </div>
+        </div>
+        <!-- Wallet Address Display -->
+        <div
+          id="wallet-address"
+          class="mb-4 d-none text-success text-center fw-bold small"
+        ></div>
+        <!-- Optional Profile Form -->
+        <form id="profile-form" class="d-none text-start" autocomplete="off">
+          <div class="mb-3">
+            <label for="username" class="form-label">Display Name</label>
+            <input
+              type="text"
+              id="username"
+              class="form-control"
+              placeholder="Display Name"
+              required
+            />
+          </div>
+          <div class="mb-3">
+            <textarea
+              id="bio"
+              class="form-control"
+              placeholder="Short Bio (optional)"
+            ></textarea>
+          </div>
+          <div class="mb-3">
+            <input
+              type="url"
+              id="profile-image"
+              class="form-control"
+              placeholder="Profile Image URL (optional)"
+            />
+          </div>
+          <button type="submit" class="btn btn-danger w-100">
+            Save Profile
+          </button>
+        </form>
+        <!-- Back Button -->
+        <button
+          id="back-to-login"
+          class="btn btn-outline-danger btn-md w-100 border-white"
+        >
+          Back to landing page
+        </button>
+      </div>
+    </section>
+    <!-- Matching Screen -->
+    <section id="matching-screen" class="container d-none vh-100">
+      <div class="mb-3">
+        <div class="card-container position-relative">
+          <!-- Cards will be generated dynamically -->
+        </div>
+      </div>
+      <!-- Chat Screen -->
+      <div id="chat-screen" class="container d-none">
+        <button id="back-to-swipe" class="btn mt-2">
+          <span>x</span>
+        </button>
+        <div class="d-flex align-items-center pt-2 mt-2 pb-2 mb-2">
+          <img id="chat-avatar" src="" class="rounded-circle me-2" width="50" />
+          <h2 id="chat-name" class="mb-0 flex-grow-1"></h2>
+        </div>
+        <div
+          id="chat-messages"
+          class="border-white p-3 mb-3 bg-white rounded d-flex"
+        ></div>
+        <div class="input-group">
+          <input
+            type="text"
+            id="chat-input"
+            class="form-control border-white"
+            placeholder="Type a message..."
+          />
+          <button id="send-message" class="btn btn-primary">Send</button>
+        </div>
+      </div>
+    </section>
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+    <!-- wallet detector-->
+    <script>
+      $(document).ready(function () {
+        const $walletButtons = $("#wallet-buttons");
+        const $walletAddress = $("#wallet-address");
+        const $profileForm = $("#profile-form");
+        const $installGuide = $("#install-wallet-guide");
+        let detectedWallets = 0;
+        async function connectToWallet(walletProvider, name) {
+          try {
+            console.log(`[${name}] Connecting...`);
+            const res = await walletProvider.connect();
+            const address = res.publicKey.toString();
+            console.log(`[${name}] Connected address: ${address}`);
+            $walletAddress
+              .text(`${name} Connected: ${address}`)
+              .removeClass("d-none");
+            localStorage.setItem("walletAddress", address);
+            $profileForm.removeClass("d-none");
+            $walletButtons
+              .find("button")
+              .prop("disabled", true)
+              .text(`${name} Connected`);
+          } catch (err) {
+            alert(`Gagal connect ke ${name}.`);
+            console.error(`[${name}] Error saat connect:`, err);
+          }
+        }
+
+        function detectWallets() {
+          $walletButtons.empty();
+          detectedWallets = 0;
+          if (window.solana && window.solana.isPhantom) {
+            $walletButtons.append(`
+			<button class="btn btn-dark me-2 mb-2" id="connect-phantom">Connect Phantom</button>`);
+            detectedWallets++;
+          }
+          if (window.solflare) {
+            $walletButtons.append(`
+			<button class="btn btn-warning me-2 mb-2" id="connect-solflare">Connect Solflare</button>`);
+            detectedWallets++;
+          }
+          if (window.backpack && window.backpack.solana) {
+            $walletButtons.append(`
+			<button class="btn btn-info me-2 mb-2" id="connect-backpack">Connect Backpack</button>`);
+            detectedWallets++;
+          }
+          if (detectedWallets === 0) {
+            $installGuide.removeClass("d-none");
+          } else {
+            $installGuide.addClass("d-none");
+          }
+        }
+        // Delegated event listeners supaya bisa trigger tombol yang di-append
+        $(document).on("click", "#connect-phantom", () =>
+          connectToWallet(window.solana, "Phantom")
+        );
+        $(document).on("click", "#connect-solflare", () =>
+          connectToWallet(window.solflare, "Solflare")
+        );
+        $(document).on("click", "#connect-backpack", () =>
+          connectToWallet(window.backpack.solana, "Backpack")
+        );
+        // Cek ulang setelah delay (phantom kadang lambat inject)
+        setTimeout(() => {
+          detectWallets();
+        }, 1000);
+        const storedAddress = localStorage.getItem("walletAddress");
+        if (storedAddress) {
+          $walletAddress.text(`Wallet: ${storedAddress}`).removeClass("d-none");
+          $profileForm.removeClass("d-none");
+          $walletButtons
+            .find("button")
+            .prop("disabled", true)
+            .text("Wallet Connected");
+        }
+        // Event untuk tombol "Retry"
+        $(document).on("click", "#retry-connect", function () {
+          detectWallets();
+        });
+      });
+    </script>
+  </body>
+</html>
