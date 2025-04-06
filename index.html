@@ -17,9 +17,7 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
-    <link
-      rel="stylesheet"
-      href="style.css"/>
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body
     class="bg-light d-flex justify-content-center align-items-center vh-100"
@@ -39,8 +37,11 @@
         <button id="go-to-register" class="btn btn-danger btn-md mb-4">
           GET INVITED
         </button>
-        <br/>
-        <small>we select based on taste and character, its very private and selective.</small>
+        <br />
+        <small
+          >we select based on taste and character, its very private and
+          selective.</small
+        >
       </div>
       <!-- Member List -->
       <div class="container pt-4 pb-4 border-bottom">
@@ -120,8 +121,8 @@
     <!-- register screen -->
     <section id="register-screen" class="screen container d-none">
       <div class="w-100">
-        <h1 class="mb-4">We Use Solana Wallets as Identity</h1>
-        <p class="lead mb-4 text-center">
+        <h1 class="mb-4 fs-2 fw-normal">We Use Solana Wallets as Identity</h1>
+        <p class="lead mb-4 text-center d-none">
           Connect your wallet to start matching!
         </p>
         <!-- Dynamic Wallet Buttons -->
@@ -181,7 +182,8 @@
         <!-- Optional Profile Form -->
         <form id="profile-form" class="d-none text-start" autocomplete="off">
           <div class="mb-3">
-            <label for="username" class="form-label">Display Name</label>
+            <label for="username" class="form-label d-block text-center d-none" style="color: #dc3545;">Lets Start LLUV</label
+            >
             <input
               type="text"
               id="username"
@@ -190,7 +192,7 @@
               required
             />
           </div>
-          <div class="mb-3">
+          <!--<div class="mb-3">
             <textarea
               id="bio"
               class="form-control"
@@ -204,18 +206,19 @@
               class="form-control"
               placeholder="Profile Image URL (optional)"
             />
-          </div>
+          </div>-->
           <button type="submit" class="btn btn-danger w-100">
             Save Profile
           </button>
         </form>
         <!-- Back Button -->
-        <button
+        <a
+          href="#"
           id="back-to-login"
-          class="btn btn-outline-danger btn-md w-100 border-white"
+          class="d-block text-center mt-3 text-decoration-none"
         >
-          Back to landing page
-        </button>
+        &larr; Back to landing page
+        </a>
       </div>
     </section>
     <!-- Matching Screen -->
@@ -268,7 +271,9 @@
             const address = res.publicKey.toString();
             console.log(`[${name}] Connected address: ${address}`);
             $walletAddress
-              .text(`${name} Connected: ${address}`)
+              .html(
+                `<div class="dblock p-1 m-1">${name} Connected!</div> <div class="dblock p-2 m-2" style="overflow-x:auto;color:black">${address}</div>`
+              )
               .removeClass("d-none");
             localStorage.setItem("walletAddress", address);
             $profileForm.removeClass("d-none");
@@ -322,7 +327,11 @@
         }, 1000);
         const storedAddress = localStorage.getItem("walletAddress");
         if (storedAddress) {
-          $walletAddress.text(`Wallet: ${storedAddress}`).removeClass("d-none");
+          $walletAddress
+            .html(
+              `<div class="d-block p-1 m-1">Your Wallet</div><div class="d-block p-2 m-2" style="color:black;overflow-x:auto">${storedAddress}</div>`
+            )
+            .removeClass("d-none");
           $profileForm.removeClass("d-none");
           $walletButtons
             .find("button")
